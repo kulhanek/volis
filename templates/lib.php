@@ -5,7 +5,7 @@
 function find_season($password)
 {
     $handle = fopen("data/seasons.list","r");
-    if( ! $handle ) return("");
+    if( ! $handle ) return("wp");
 
     while( ($line = fgets($handle)) !== false ) {
         $tok = strtok($line, "\t"); // season password
@@ -17,7 +17,7 @@ function find_season($password)
     }
 
     fclose($handle);
-    return("");
+    return("wp");
 }
 
 // -----------------------------------------------------------------------------

@@ -10,15 +10,15 @@ include('templates/lib.php');
 $season = ""; // not initialized
 if( ! (isset($_SESSION['username']) && isset($_SESSION['season'])) ) {
     // not yet logged in
-    if( (!isset($_POST['username'])) || ($_POST['username'] == '') ) { 
+    if( (!isset($_GET['username'])) || ($_GET['username'] == '') ) { 
         include('templates/login.php');
     } else {
         // find season
-        $season = find_season($_POST['password']);
+        $season = find_season($_GET['skey']);
         if( $season == "wp" ){ // not found
             include('templates/login.php');
         } else {
-            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['username'] = $_GET['username'];
             $_SESSION['season'] = $season;
         }
     }
@@ -27,7 +27,7 @@ if( ! (isset($_SESSION['username']) && isset($_SESSION['season'])) ) {
 // are we logged in?
 if( isset($_SESSION['username']) && isset($_SESSION['season']) ) {
     // decode action
-    switch ($_POST['action']) {
+    switch ($_GET['action']) {
         case 'logout':
             session_unset();
             session_destroy(); 

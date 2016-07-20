@@ -15,82 +15,132 @@ body {
     max-width: 1280px;
     }
 
-/* ======================================================== */
-
 h1 {
     text-align: center;
     color: white;
     background-color: #3163ce;
-    margin: 0px 10px;
+    margin: 0px 0px;
     padding: 2px 10px;
     }
     
-p,table,h2 {
-    margin: 5px 10px; 
-}
-
-p.txt {
-    text-indent: 1em;
+/* ======================================================== */    
     
-}
-
-h2.player {
-    margin: 0px 10px;  
-    height: 1.5em;
-    vertical-align: middle;
-    background-color: #acc0eb;
-    border-style : solid;
-    border-color: #3163ce;
-    border-width: 2px;
-}
-
-h2.player span { 
-    margin: 5px 10px;     
-    height: 1.5em; 
-    vertical-align: middle;    
-    float: left;  
-}
-
-h2.player input { 
-    margin: 5px 10px; 
-    height: 1.5em; 
-    vertical-align: middle;    
-    float: right;  
+p,table,h2 {
+    margin: 5px 10px 0px 10px; 
 }
 
 input.flat {
-    border-style : solid;
-    border-color: #3163ce;
+    padding: 5px;  
+    color: white;      
+    background-color: #3163ce;
     border-width: 1px;    
+    border-style: solid;
+    border-color: #224590;
 }
 
-h2 {
+input.flat:hover {
+    padding: 5px;      
+    color: #224590;    
+    background-color: white;
+    border-style: solid;    
+    border-color: #224590;
+    border-width: 1px;
+}
+
+/* ======================================================== */  
+
+p.txt {
+    text-indent: 1em;
+}
+
+p.error {
+    color: red;
+    font-weight: bold;
     text-align: center;
 }
 
-input#attend {
-    margin: 5px 10px;     
-    float: left;   
+div#login input {
+    margin: 10px auto 0px auto;    
+    display: block;
+    width: 20em;
 }
 
-input#excuse {
-    margin: 5px 10px;     
-    float: right;   
+div#login input.text {
+    border: none;
+    border-width: 1px;    
+    border-bottom-style: solid;
+    border-color: #224590;
 }
 
-input:hover {
-    background-color: #3163ce;
-    color: white;
+/* ======================================================== */  
+
+div#play h2 {
+    margin:  5px 5px;
+    padding: 2px;
+    text-align: center;
 }
+
+div#play input {
+    vertical-align: middle;
+    background-color: white;
+    color: #224590;
+    font-weight: bold;
+    border-width: 1px;    
+    border-bottom-style: solid;
+    border-color: #224590;
+}
+
+div#play input:hover {
+    color: red;
+}
+
+/* ======================================================== */  
+
+div#player {
+    overflow: auto;
+    border-style: solid;
+    border-color: #3163ce;
+    padding: 5px;
+}
+
+div#player h2 {
+    margin: 0px; 
+}
+
+div#player h2.player span {       
+    float: left;  
+}
+
+div#player h2.player input { 
+    float: right;  
+}
+
+/* ======================================================== */  
+
+div#attendance {
+    text-align: center;
+}
+
+div#attendance input {
+    width: 5em;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+    
+
+/* ======================================================== */  
 
 #foot {
-    margin: 5px 10px; 
+    margin: 0px 0px;
+    padding-top: 10px;
 }
     
 #foot p {
     text-align: center;
     margin: 2px;
-    padding: 2px;
+    padding: 5px;
     border-top-style : solid;
     border-color: #000066;
     border-width: 2px;
