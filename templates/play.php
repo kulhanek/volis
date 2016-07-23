@@ -11,9 +11,24 @@ if( $_SESSION['next'] > 0 ){
 
 <?php
     get_play_players($play);
+    $min_players = get_play_min_players($play);
+    $max_players = get_play_max_players($play); 
 ?>
 
 <table>
+    <tr>
+        <td>Stav:</td>
+        <td colspan="2">
+<?php
+    if( count($attended) >= $min_players ) {
+        printf("<span class=\"ok\">Hrajeme, je nás dost.</span>\n");
+    } else if ( count($attended) < $min_players ) {
+        printf("<span class=\"error\">Nehrajeme, je nás zatím málo ...</span>\n");
+    }
+?>
+        </td>
+    </tr>
+
     <tr>
         <td>Přijde:</td>
         <td>
@@ -40,10 +55,20 @@ if( $_SESSION['next'] > 0 ){
 ?>
         </td>
     </tr>
+    <tr>
+        <td>Min/Max počet:</td>
+        <td>
+<?php
+    printf("%s/%s",$min_players,$max_players);
+?>
+        </td>
+        <td>
+        </td>
+    </tr>
 </table>
 <div id="attendance">
 <?php
-if( ! in_array($_SESSION['username'],$attended) ){
+if( (! in_array($_SESSION['username'],$attended)) && ( count($attended) < $max_players ) ){
     echo '<input class="attend flat" type="button" value="Přijdu" name="attend" onclick="do_action(\'attend\');"/>';
 }
 if( ! in_array($_SESSION['username'],$excused) ){

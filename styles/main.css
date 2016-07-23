@@ -58,6 +58,18 @@ p.error {
     text-align: center;
 }
 
+span.ok {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+span.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
 div#login input {
     margin: 10px auto 0px auto;    
     display: block;
@@ -97,7 +109,7 @@ div#play input:hover {
 
 div#player {
     overflow: auto;
-    border-style: solid;
+    border-bottom-style: solid;
     border-color: #3163ce;
     padding: 5px;
 }

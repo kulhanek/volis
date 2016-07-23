@@ -105,7 +105,7 @@ function get_play_time($play)
 function get_play_min_players($play)
 {
     $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");
-    if( ! $handle ) return(0);
+    if( ! $handle ) return("");
 
     while( ($line = fgets($handle)) !== false ) {
         $pid = strtok($line, "\t"); // play id
@@ -118,7 +118,29 @@ function get_play_min_players($play)
     }
 
     fclose($handle);
-    return(0);
+    return("");
+}
+
+// -----------------------------------------------------------------------------
+
+function get_play_max_players($play)
+{
+    $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");
+    if( ! $handle ) return("");
+
+    while( ($line = fgets($handle)) !== false ) {
+        $pid = strtok($line, "\t"); // play id
+        $pd = strtok("\t"); // date
+        if( $pid == $play ){
+            $mu = strtok("\t"); // min number of players
+            $mu = strtok("\t"); // max number of players
+            fclose($handle);
+            return($mu);
+        }
+    }
+
+    fclose($handle);
+    return("");
 }
 
 // -----------------------------------------------------------------------------
