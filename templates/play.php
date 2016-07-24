@@ -38,7 +38,7 @@ if( $_SESSION['next'] > 0 ){
         </td>
         <td>
 <?php
-    echo implode(",",$attended);
+    echo implode(", ",$attended);
 ?>
         </td>
     </tr>
@@ -51,7 +51,7 @@ if( $_SESSION['next'] > 0 ){
         </td>
         <td>
 <?php
-    echo implode(",",$excused);
+    echo implode(", ",$excused);
 ?>
         </td>
     </tr>
