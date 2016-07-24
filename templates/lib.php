@@ -177,8 +177,8 @@ function get_play_players($play)
 
     closedir($dh);
 
-    asort($attended);
-    asort($excused);
+    natcasesort($attended);
+    natcasesort($excused);
 
     return(true);
 }
