@@ -82,6 +82,44 @@ function find_play()
 
 // -----------------------------------------------------------------------------
 
+function is_next()
+{
+    if( ! isset($_SESSION['next']) ){
+        $_SESSION['next'] = 0;
+    }
+
+    $next = $_SESSION['next'];
+    $next = $next + 1;
+
+    $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");
+    if( ! $handle ) return(false);
+
+    $curdate = new DateTime();
+
+    $first_ok = -1;
+    $valid_id = -1;
+    while( ($line = fgets($handle)) !== false ) {
+        $pid = strtok($line, "\t"); // play id
+        $tok = strtok("\t"); // date
+        $playdate = DateTime::createFromFormat('d-m-Y H:i',$tok);
+
+        if( $playdate >= $curdate ){
+            if( $first_ok == -1 ) $first_ok = $pid;
+            $valid_id++;
+            if( $valid_id == $next ){
+                fclose($handle);
+                return(true);
+            }
+        }
+    }
+
+    fclose($handle);
+
+    return(false); // return to the beginning
+}
+
+// -----------------------------------------------------------------------------
+
 function get_play_time($play)
 {
     $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");

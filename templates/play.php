@@ -5,7 +5,9 @@ if( $_SESSION['next'] > 0 ){
     echo '<input class="material-icons" type="button" value="&#xE5C4;" name="prev" onclick="do_action(\'prev\');"/>';
 }
     printf(' | %s | ',get_play_time($play));
-    echo '<input class="material-icons" type="button" value="&#xE5C8;" name="next" onclick="do_action(\'next\');"/></h2>';
+    if( is_next() ){
+        echo '<input class="material-icons" type="button" value="&#xE5C8;" name="next" onclick="do_action(\'next\');"/></h2>';
+    }
 ?>
 </div>
 
