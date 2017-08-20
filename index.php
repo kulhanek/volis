@@ -26,7 +26,7 @@ if( ! (isset($_SESSION['username']) && isset($_SESSION['season'])) ) {
             if( is_registered($season) ){
                 $_SESSION['season'] = $season;
             } else {
-                $season = "wp";
+                $season = "wu";
                 include('templates/head.html');
                 include('templates/login.php');
                 include('templates/tail.html');            

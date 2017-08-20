@@ -5,7 +5,10 @@
 <p class="txt"><b>Registrované přezdívky jsou (bez diakritiky)</b>: Petr, AlesS, Jarda, AlesR, Simeon, Zdenek, Pavel, Matej, Rene, Zbynek, Hanka</p>
 <?php
 if( $season == "wp" ) {
-    echo '<p class="error">Nesprávná přezdívka nebo heslo!</p>';
+    echo '<p class="error">Nesprávné heslo!</p>';
+}
+if( $season == "wu" ) {
+    echo '<p class="error">Nesprávná přezdívka!</p>';
 }
 ?>
 <div id="login">
