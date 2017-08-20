@@ -87,7 +87,7 @@ function is_registered($season)
     $users = file(sprintf("data/%s.users",$season));
     
     foreach($users as $user) {
-        $user = str_replace(array("\n"), '', $user)
+        $user = str_replace(array("\n"), '', $user);
         if( strtolower($user) == strtolower($_POST['username']) ){
             $_SESSION['username'] = $user;
             return(true);
