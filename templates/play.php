@@ -1,9 +1,9 @@
 <div id="play">
 <?php 
     printf("<h2>Hra #%d</h2>\n<h2>",$play);
-if( is_prev() ){
-    echo '<input class="material-icons" type="button" value="&#xE5C4;" name="prev" onclick="do_action(\'prev\');"/>';
-}
+    if( is_prev() ){
+        echo '<input class="material-icons" type="button" value="&#xE5C4;" name="prev" onclick="do_action(\'prev\');"/>';
+    }
     printf(' | %s | ',get_play_time($play));
     if( is_next() ){
         echo '<input class="material-icons" type="button" value="&#xE5C8;" name="next" onclick="do_action(\'next\');"/></h2>';
