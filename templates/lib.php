@@ -82,6 +82,32 @@ function find_play()
 
 // -----------------------------------------------------------------------------
 
+function is_registered()
+{
+    $users = file(sprintf("data/%s.users",$_SESSION['season']));
+    
+    foreach($users as $user) {
+        if( strtolower($user) == strtolower($_POST['username']) ){
+            $_SESSION['username'] = $user;
+            return(true);
+        }
+    }
+
+
+
+    return(false); 
+}
+
+// -----------------------------------------------------------------------------
+
+function is_prev()
+{
+    // TODO
+    return(true); 
+}
+
+// -----------------------------------------------------------------------------
+
 function is_next()
 {
     if( ! isset($_SESSION['next']) ){

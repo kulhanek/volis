@@ -23,8 +23,14 @@ if( ! (isset($_SESSION['username']) && isset($_SESSION['season'])) ) {
             include('templates/tail.html');
             exit;
         } else {
-            $_SESSION['username'] = $_POST['username'];
-            $_SESSION['season'] = $season;
+            if( is_registered() ){
+                $_SESSION['season'] = $season;
+            } else {
+                $season = "wp";
+                include('templates/head.html');
+                include('templates/login.php');
+                include('templates/tail.html');            
+            }
         }
     }
 }
