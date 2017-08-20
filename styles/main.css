@@ -123,6 +123,7 @@ div#player h2.player span {
 }
 
 div#player h2.player input { 
+    padding-left: 5px;
     float: right;  
 }
 
