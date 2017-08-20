@@ -23,7 +23,7 @@ if( ! (isset($_SESSION['username']) && isset($_SESSION['season'])) ) {
             include('templates/tail.html');
             exit;
         } else {
-            if( is_registered() ){
+            if( is_registered($season) ){
                 $_SESSION['season'] = $season;
             } else {
                 $season = "wp";

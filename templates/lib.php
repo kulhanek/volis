@@ -82,7 +82,7 @@ function find_play()
 
 // -----------------------------------------------------------------------------
 
-function is_registered()
+function is_registered($season)
 {
     $users = file(sprintf("data/%s.users",$season));
     
