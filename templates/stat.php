@@ -1,12 +1,12 @@
 <?php
     $price=3710;
 ?>
-
+<h3>Docházka - souhrn</h3>
 <table>
     <tr>
-        <td>Hráč</td>
-        <td>Účast</td>
-        <td>Příspěvek</td>
+        <th>Hráč</th>
+        <th>Účast</th>
+        <th>Příspěvek</th>
     </tr>
 <?php
     $users = file(sprintf("data/%s.users",$_SESSION['season']));
@@ -66,5 +66,20 @@
         printf("<tr>\n");
         printf("    <td>Celkem:</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$allnatt,$price);
         printf("</tr>\n");     
+?>
+</table>
+
+<h3>Docházka - podrobný výpis</h3>
+<table>
+    <tr>
+        <th>Hra</th>
+        <th>Datum</th>
+        <th>Účast</th>
+    </tr>
+
+<?php
+
+
+
 ?>
 </table>
