@@ -88,7 +88,7 @@
                     get_play_players($pid);
                     
                     printf("<tr>\n");
-                    printf("    <td>%d</td><td align=\"right\">%s</td><td align=\"right\">%s</td>\n",$pid,$tok,implode(", ",$attended));
+                    printf("    <td>%d</td><td align=\"right\">%s</td><td>%s</td>\n",$pid,$tok,implode(", ",$attended));
                     printf("</tr>\n");
                 }
             }
