@@ -79,18 +79,19 @@
 
 <?php
         $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");
-        if( ! $handle ) break;
+        if( $handle ) {
 
-        while( ($line = fgets($handle)) !== false ) {        
-            $pid = strtok($line, "\t"); // play id
-            $tok = strtok("\t"); // date
-            get_play_players($pid);
+            while( ($line = fgets($handle)) !== false ) {        
+                $pid = strtok($line, "\t"); // play id
+                $tok = strtok("\t"); // date
+                get_play_players($pid);
+                
+                printf("<tr>\n");
+                printf("    <td>%d</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$pid,$tok,implode(", ",$attended));
+                printf("</tr>\n");  
+            }
             
-            printf("<tr>\n");
-            printf("    <td>%d</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$pid,$tok,implode(", ",$attended));
-            printf("</tr>\n");  
+            fclose($handle);
         }
-        
-        fclose($handle);
 ?>
 </table>
