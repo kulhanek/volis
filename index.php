@@ -79,6 +79,11 @@ if( isset($_SESSION['username']) && isset($_SESSION['season']) ) {
             header("HTTP/1.1 303 See Other");
             header("Location: $_SERVER[HTTP_REFERER]");
             break;
+        case 'stat':
+            include('templates/head.html');
+            include('templates/user.php');
+            include('templates/stat.php');
+            break;            
         default:
             $play = find_play();
             include('templates/head.html');
