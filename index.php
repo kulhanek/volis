@@ -83,12 +83,14 @@ if( isset($_SESSION['username']) && isset($_SESSION['season']) ) {
             include('templates/head.html');
             include('templates/user.php');
             include('templates/stat.php');
+            include('templates/tail.html');
             break;            
         default:
             $play = find_play();
             include('templates/head.html');
             include('templates/user.php');
             include('templates/play.php');
+            include('templates/tail.html');
             break;
     }
 }
