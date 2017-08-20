@@ -1,7 +1,7 @@
 <?php
     $price=3710;
 ?>
-<h3>Docházka - souhrn</h3>
+<h3>Souhrn docházky</h3>
 <table>
     <tr>
         <th>Hráč</th>
@@ -69,7 +69,7 @@
 ?>
 </table>
 
-<h3>Docházka - podrobný výpis</h3>
+<h3>Podrobný výpis docházky</h3>
 <table>
     <tr>
         <th>Hra</th>
@@ -78,8 +78,19 @@
     </tr>
 
 <?php
+        $handle = fopen(sprintf("data/%s",$_SESSION['season']),"r");
+        if( ! $handle ) break;
 
-
-
+        while( ($line = fgets($handle)) !== false ) {        
+            $pid = strtok($line, "\t"); // play id
+            $tok = strtok("\t"); // date
+            get_play_players($pid);
+            
+            printf("<tr>\n");
+            printf("    <td>%d</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$pid,$tok,implode(", ",$attended));
+            printf("</tr>\n");  
+        }
+        
+        fclose($handle);
 ?>
 </table>
