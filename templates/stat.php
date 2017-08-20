@@ -59,12 +59,12 @@
         fclose($handle);
         
         printf("<tr>\n");
-        printf("    <td>%s</td><td align="right">%d</td><td align="right">%d</td>\n",$user,$natt,$price*$natt/$allnatt);
+        printf("    <td>%s</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$user,$natt,$price*$natt/$allnatt);
         printf("</tr>\n");        
     }
     
         printf("<tr>\n");
-        printf("    <td>Celkem:</td><td align="right">%d</td><td align="right">%d</td>\n",$allnatt,$price);
+        printf("    <td>Celkem:</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$allnatt,$price);
         printf("</tr>\n");     
 ?>
 </table>
