@@ -61,7 +61,9 @@ if( isset($_SESSION['username']) && isset($_SESSION['season']) ) {
             if( ! isset($_SESSION['next']) ){
                 $_SESSION['next'] = 0;
             }
-            $_SESSION['next']--;
+            if( $_SESSION['next'] > 0 ){
+                $_SESSION['next']--;
+            }
             header("HTTP/1.1 303 See Other");
             header("Location: $_SERVER[HTTP_REFERER]");
             break;
