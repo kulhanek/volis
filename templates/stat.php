@@ -84,11 +84,13 @@
             while( ($line = fgets($handle)) !== false ) {        
                 $pid = strtok($line, "\t"); // play id
                 $tok = strtok("\t"); // date
-                get_play_players($pid);
-                
-                printf("<tr>\n");
-                printf("    <td>%d</td><td align=\"right\">%d</td><td align=\"right\">%d</td>\n",$pid,$tok,implode(", ",$attended));
-                printf("</tr>\n");  
+                if( $pid > 0 ){
+                    get_play_players($pid);
+                    
+                    printf("<tr>\n");
+                    printf("    <td>%d</td><td align=\"right\">%s</td><td align=\"right\">%s</td>\n",$pid,$tok,implode(", ",$attended));
+                    printf("</tr>\n");
+                }
             }
             
             fclose($handle);
