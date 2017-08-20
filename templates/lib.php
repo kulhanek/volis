@@ -84,7 +84,7 @@ function find_play()
 
 function is_registered()
 {
-    $users = file(sprintf("data/%s.users",$_SESSION['season']));
+    $users = file(sprintf("data/%s.users",$season));
     
     foreach($users as $user) {
         if( strtolower($user) == strtolower($_POST['username']) ){
