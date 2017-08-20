@@ -17,15 +17,17 @@
         while( ($line = fgets($handle)) !== false ) {        
             $pid = strtok($line, "\t"); // play id
             if( is_file(sprintf("var/%s.%d.%s",$_SESSION['season'],$pid,$user)) ){
-                $handle = fopen(sprintf("var/%s.%d.%s",$_SESSION['season'],$pid,$user),"r");
-                fscanf($handle,"%d",$flag);
+                $handle1 = fopen(sprintf("var/%s.%d.%s",$_SESSION['season'],$pid,$user),"r");
+                fscanf($handle1,"%d",$flag);
                 if( $flag == 1 ){
                     $natt++;
                     $allnatt++;
                 }
-                fclose($handle);
+                fclose($handle1);
             }
         }
+        
+        fclose($handle);
         
         printf("<tr>\n");
         printf("    <td>%s</td><td>%d</td>\n",$user,$natt);
