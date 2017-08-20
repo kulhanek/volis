@@ -51,7 +51,6 @@
                 fscanf($handle1,"%d",$flag);
                 if( $flag == 1 ){
                     $natt++;
-                    $allnatt++;
                 }
                 fclose($handle1);
             }
