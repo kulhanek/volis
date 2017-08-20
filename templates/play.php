@@ -1,7 +1,7 @@
 <div id="play">
 <?php 
     printf("<h2>Hra #%d</h2>\n<h2>",$play);
-if( $_SESSION['next'] > 0 ){
+if( is_prev() ){
     echo '<input class="material-icons" type="button" value="&#xE5C4;" name="prev" onclick="do_action(\'prev\');"/>';
 }
     printf(' | %s | ',get_play_time($play));
@@ -70,11 +70,13 @@ if( $_SESSION['next'] > 0 ){
 </table>
 <div id="attendance">
 <?php
+if( $_SESSION['next'] >= 0 ){
 if( (! in_array($_SESSION['username'],$attended)) && ( count($attended) < $max_players ) ){
     echo '<input class="attend flat" type="button" value="Přijdu" name="attend" onclick="do_action(\'attend\');"/>';
 }
 if( ! in_array($_SESSION['username'],$excused) ){
     echo '<input class="excuse flat" type="button" value="Nepřijdu" name="excuse" onclick="do_action(\'excuse\');"/>';
+}
 }
 ?>
 <div>
