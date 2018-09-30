@@ -2,7 +2,7 @@
 <h2>Přihlášení</h2>
 <p class="txt">Přezdívku přiděluje správce systému, protože se od ní odvozuje statistika vaši účasti. Heslo je stejné pro všechny hráče a pro herní sezónu a poskytne vám jej správce těchto stránek.</p>
 <p class="txt"><b>Uzávěrka je každé pondělí v 10:00</b>, pokud nebude přihlášený minimální počet hráčů, tak se nebude hrát. Pokud nás bude více, bude se střídat. Půjčíme více balonů na pinkání mimo hřiště.</p>
-<p class="txt"><b>Registrované přezdívky jsou (bez diakritiky)</b>: Petr, AlesS, Jarda, AlesR, Simeon, Zdenek, Pavel, Matej, Rene, Zbynek, Hanka</p>
+<p class="txt"><b>Registrované přezdívky jsou (bez diakritiky)</b>: Petr, AlesS, Jarda, AlesR, Simeon, Zdenek, Pavel, Matej, Rene, Zbynek, Hanka, Niky, Anicka, Host1, Host2</p>
 <?php
 if( $season == "wp" ) {
     echo '<p class="error">Nesprávné heslo!</p>';

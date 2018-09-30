@@ -1,4 +1,11 @@
 <div id="play">
+<?php
+    if( $play == -1 ) {
+        printf("<h2>Už se nehraje :-(</h2> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
+        return;
+    }
+?>
+
 <?php 
     printf("<h2>Hra #%d</h2>\n<h2>",$play);
 if( $_SESSION['next'] > 0 ){

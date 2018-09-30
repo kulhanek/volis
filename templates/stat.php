@@ -1,5 +1,5 @@
 <?php
-    $price=3710;
+    $price=4720;
 ?>
 <h3>Souhrn docházky</h3>
 <table>
